@@ -1,3 +1,5 @@
+
+// asyncMethods是个对象，键是model.name，值是module.async
 export default (asyncMethods) => {
 
 	return ({dispatch, getState}) => next => action => {

@@ -1,10 +1,10 @@
-import BaseComponent from './components/BaseComponent';
-import render from './action';
+
+
+import render from './action/render';
 import {start, connect} from './store';
 
-
-export default {
+export {
+    render,
     start,
-    connect,
-    render
+    connect
 };

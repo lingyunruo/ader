@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import pubSub from '../pubSub';
+
 class BaseComponent extends Component {
 
     constructor(props) {
@@ -13,7 +15,11 @@ class BaseComponent extends Component {
             this.action = {};
         }
         Object.keys(this.actions).map((key) => {
-            this.action[key] = new this.actions[key](this);
+            let action = new this.actions[key](this);
+            // 给每个action添加订阅发布
+            action.pubSub = pubSub;
+
+            this.action[key] = action
         });
     }
 
@@ -33,6 +39,17 @@ class BaseComponent extends Component {
             Object.keys(this.action).map((key) => {
                 let action = this.action[key];
                 if('didUpdate' in action && typeof action.didUpdate === 'function') {
+                    action.didUpdate.call(this.action);
+                }
+            });
+        }
+    }
+
+    componentWillUnmount() {
+        if(this.action && typeof this.action === 'object') {
+            Object.keys(this.action).map((key) => {
+                let action = this.action[key];
+                if('willUnMount' in action && typeof action.didUpdate === 'function') {
                     action.didUpdate.call(this.action);
                 }
             });
