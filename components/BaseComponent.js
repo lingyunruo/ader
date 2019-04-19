@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 
 import pubSub from './pubSub';
 
+// 内建方法列表
+const builtInMethods = ['didMount', 'didUpdate', 'willUnMount', 'didAllInstance', 'didInstance'];
+
 class BaseComponent extends Component {
 
     constructor(props) {
@@ -10,8 +13,15 @@ class BaseComponent extends Component {
         this.loadActions = this.loadActions.bind(this);
     }
 
+    methods = {
+        'didMount': [],
+        'didUpdate': [],
+        'willUnMount': [],
+        'didAllInstance': [],
+        'didInstance': []
+    }
+
     loadActions() {
-        let didAllInstance = [];
         if(this.action === undefined) {
             this.action = {};
         }
@@ -21,15 +31,19 @@ class BaseComponent extends Component {
             action.pubSub = pubSub;
 
             this.action[key] = action;
-            if(action.didInstance) {
-                action.didInstance();
-            }
-            if(action.didAllInstance) {
-                didAllInstance.push(action.didAllInstance.bind(action));
+
+            builtInMethods.map((item) => {
+                if(typeof action[item] === 'function') {
+                    this.methods[item].push(action[item].bind(action));
+                }
+            });
+
+            if(typeof action['didInstance'] === 'function') {
+                action['didInstance'].call(action);
             }
         });
         // 所有action实例化执行完成之后执行
-        didAllInstance.map((fn) => {
+        this.methods['didAllInstance'].map((fn) => {
             if(typeof fn === 'function') {
                 fn();
             }
@@ -37,36 +51,21 @@ class BaseComponent extends Component {
     }
 
     componentDidMount() {
-        if(this.action && typeof this.action === 'object') {
-            Object.keys(this.action).map((key) => {
-                let action = this.action[key];
-                if('didMount' in action && typeof action.didMount === 'function') {
-                    action.didMount.call(this.action);
-                }
-            });
-        }
+        this.methods['didMount'].map((fn) => {
+            fn();
+        });
     }
 
     componentDidUpdate() {
-        if(this.action && typeof this.action === 'object') {
-            Object.keys(this.action).map((key) => {
-                let action = this.action[key];
-                if('didUpdate' in action && typeof action.didUpdate === 'function') {
-                    action.didUpdate.call(this.action);
-                }
-            });
-        }
+        this.methods['didUpdate'].map((fn) => {
+            fn();
+        });
     }
 
     componentWillUnmount() {
-        if(this.action && typeof this.action === 'object') {
-            Object.keys(this.action).map((key) => {
-                let action = this.action[key];
-                if('willUnMount' in action && typeof action.didUpdate === 'function') {
-                    action.didUpdate.call(this.action);
-                }
-            });
-        }
+        this.methods['willUnMount'].map((fn) => {
+            fn();
+        });
     }
 }
 
