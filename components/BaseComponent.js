@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import pubSub from '../pubSub';
+import pubSub from './pubSub';
 
 class BaseComponent extends Component {
 
@@ -11,6 +11,7 @@ class BaseComponent extends Component {
     }
 
     loadActions() {
+        let didInstance = [];
         if(this.action === undefined) {
             this.action = {};
         }
@@ -19,7 +20,16 @@ class BaseComponent extends Component {
             // 给每个action添加订阅发布
             action.pubSub = pubSub;
 
-            this.action[key] = action
+            this.action[key] = action;
+            if(action.didInstance) {
+                didInstance.push(action.didInstance.bind(action));
+            }
+        });
+        // 所有action实例化执行完成之后执行
+        didInstance.map((fn) => {
+            if(typeof fn === 'function') {
+                fn();
+            }
         });
     }
 
