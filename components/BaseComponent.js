@@ -11,7 +11,7 @@ class BaseComponent extends Component {
     }
 
     loadActions() {
-        let didInstance = [];
+        let didAllInstance = [];
         if(this.action === undefined) {
             this.action = {};
         }
@@ -22,11 +22,14 @@ class BaseComponent extends Component {
 
             this.action[key] = action;
             if(action.didInstance) {
-                didInstance.push(action.didInstance.bind(action));
+                action.didInstance();
+            }
+            if(action.didAllInstance) {
+                didAllInstance.push(action.didAllInstance.bind(action));
             }
         });
         // 所有action实例化执行完成之后执行
-        didInstance.map((fn) => {
+        didAllInstance.map((fn) => {
             if(typeof fn === 'function') {
                 fn();
             }

@@ -41,6 +41,18 @@ class CustomActionClass {
         console.log('按钮点击了');
     }
 
+    didInstance = () => {
+        console.log('会在当前action在组件上实例化完成之后执行');
+    }
+
+    didAllInstance = () => {
+        console.log('会在组件上的所有action实例化完成之后执行');
+    }
+
+    willUnMount = () => {
+        console.log('会在每次组件卸载之前执行，对应组件的componentWillUnMount');
+    }
+
 }
 
 const model = {
@@ -141,7 +153,8 @@ let WrapperComponent = fn(({props, state, action}, {customData}) => {
 | didMount | 对应绑定组件的componentDidMount |
 | willUnMount | 对应绑定组件的componentWillUnMount |
 | didUpdate | 对应绑定组件的componentDidUpdate |
-| didInstance | 当组件绑定的所有action都完成了实例化之后执行 |
+| didAllInstance | 当组件绑定的所有action都完成了实例化之后执行 |
+| didInstance | 当前的action完成实例化之后执行 |
 
 
 ```js
