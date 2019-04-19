@@ -64,54 +64,6 @@ start({
 
 > MVC分层理念，model代表M，进行数据管理，render内的jsx代表V，页面结构管理，action代表C，进行行为管理
 
-### 数据传递
-
-> 目前新增`HrContainer`容器组件0️⃣，`scope`需传入顶层组件`state`,嵌套的子组件中`action`可通过`this.context.scope`拿到完整`state`1️⃣,而子组件本身可通过`scope`,直接获取`state`2️⃣，如下的
-- 0️⃣
-```js
-import {render, HrContainer} from 'src/hrpub/common/frame/index';
-
-let handleConfig = {
-    actions: {
-        mainAction: MainAction
-    },
-    customData: '哈哈哈',
-    state: {
-        name: '12345'
-    }
-}
-let createDom = ({props, action, state, scope})=>{    // 父组件scope为undefined
-    return (
-        <HrContainer scope={state}>
-            <Header></Header>
-            <button onClick = {action.mainAction.reverseName}>container click</button>
-            {state.name}
-        </HrContainer> 
-    )
-}
-const Homepage = render(handleConfig)(createDom)
-
-```
-
-- 1️⃣ actions/header.js
-
-```js
-export default class Action1 {
-    constructor(comp) {
-        this.comp = comp;
-    }
-    reverseName = () => {
-        let comp = this.comp
-        let originName = comp.context.scope.name  // actions获取父组件state  comp.context.scope
-        this.pubSub.publish('updateState', {
-            name: [...originName].reverse().join('')
-        })
-    }
-}
-```
-
-- 2️⃣ components/Header/index.js
-
 ```js
 import {render} from 'src/hrpub/common/frame/index'
 import heaerAction from '../../actions/header'
@@ -139,7 +91,7 @@ export default render(handleConfig)(createDom)
 
 ### 实现
 
-> MVC的连接及分层由render方法实现，render方法是一个高阶函数，接受一个对象作为参数，返回一个函数。
+> V与C的关联由render方法实现，render方法是一个高阶函数，接受一个对象作为参数，返回一个函数。
 
 ```js
 let fn = render({
@@ -181,6 +133,16 @@ let WrapperComponent = fn(({props, state, action}, {customData}) => {
 | publish | type[, args...] | 发布消息，type是消息类型，args是参数，除了type，剩余的所有参数都会传入订阅方法回调函数的参数 |
 | subscribe | type, callback | 订阅消息，type是消息类型，callback是回调函数，callback参数是publish的传入 |
 | unSubscribe | type[, fn] | 取消订阅，如果传入fn，取消对应的函数，如果没有传入，则取消这个type下的所有订阅函数 |
+
+> action里有几个固定的函数，对应了action和组件的一些生命周期
+
+| 函数名 | 说明 |
+|-------|-----|
+| didMount | 对应绑定组件的componentDidMount |
+| willUnMount | 对应绑定组件的componentWillUnMount |
+| didUpdate | 对应绑定组件的componentDidUpdate |
+| didInstance | 当组件绑定的所有action都完成了实例化之后执行 |
+
 
 ```js
 // 用法示例
