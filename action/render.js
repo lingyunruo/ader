@@ -1,6 +1,5 @@
 
 import React, {Component} from 'react';
-import PropTypes from 'prop-types'
 import BaseComponent from '../components/BaseComponent';
 
 export default (config = {}) => {
@@ -15,9 +14,6 @@ export default (config = {}) => {
         } = config;
 
         class CustomComponentWithAction extends BaseComponent {
-            static contextTypes = {
-                scope: PropTypes.object
-            }
             constructor(props) {
                 super(props);
                 
