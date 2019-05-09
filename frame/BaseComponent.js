@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
-import pubSub from '../pubSub';
-import extend from '../extends';
+import pubSub from './pubSub';
+import extend from './extends';
 
 // 内建方法列表
 const builtInMethods = ['didMount', 'didUpdate', 'willUnMount', 'didAllInstance', 'didInstance'];

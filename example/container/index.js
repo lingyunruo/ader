@@ -1,4 +1,4 @@
-import {render} from '../../index';
+import {render} from '../../frame';
 
 import Action1 from '../actions/action1';
 
