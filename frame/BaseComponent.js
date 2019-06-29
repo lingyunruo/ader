@@ -32,7 +32,7 @@ class BaseComponent extends Component {
             // 给每个action添加订阅发布
             action.pubSub = pubSub;
             // 将mixin合并到action里
-            extend(action);
+            extend(action, this);
 
             this.action[key] = action;
 

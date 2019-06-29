@@ -7,7 +7,7 @@
  *  */
 
 
-export default function(childAction) {
+export default function frameExtend(childAction, context) {
 
     let extend = childAction.extend;
 
@@ -30,16 +30,20 @@ export default function(childAction) {
     }
 
     function extendObject(child, ParentAction) {
-        let parentAction = new ParentAction(child);
+        let parentAction = new ParentAction(child, context);
+        
         mergeProperty(child, parentAction);
-        mergeProperty(child, ParentAction.prototype);
     }
 
     function mergeProperty(child, parent) {
+        if(parent.extend) {
+            frameExtend(parent, context);
+        }
+
         let props = Reflect.ownKeys(parent);
 
         for(let key of props) {
-            if(key !== 'constructor') {
+            if(!child.hasOwnProperty(key) && key !== 'constructor') {
                 if(typeof parent[key] === 'function') {
                     child[key] = parent[key].bind(child);
                 }

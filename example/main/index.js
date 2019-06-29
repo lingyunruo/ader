@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import {start, connect} from '../../../../hrpub/common/store/index';
+import {start, connect} from '../../frame/index';
 
 
 import HomePage from '../container';
