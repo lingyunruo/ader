@@ -1,19 +1,26 @@
 {
-  "name": "p-frame",
+  "name": "ader",
   "version": "0.0.1",
   "description": "",
-  "main": "./frame/index.js",
+  "main": "./ader/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gitbook": "gitbook"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lingyunruo/p-frame.git"
+    "url": "git+https://github.com/lingyunruo/ader.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lingyunruo/p-frame/issues"
+    "url": "https://github.com/lingyunruo/ader/issues"
   },
-  "homepage": "https://github.com/lingyunruo/p-frame#readme"
+  "homepage": "https://github.com/lingyunruo/ader#readme",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "gitbook-cli": "^2.3.2"
+  }
 }
