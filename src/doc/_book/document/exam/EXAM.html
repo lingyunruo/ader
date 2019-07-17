@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>render · GitBook</title>
+        <title>示例 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="RELATE.html" />
     
+    <link rel="prev" href="../api/MODEL.html" />
     
 
     </head>
@@ -159,9 +159,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="1.3.1" data-path="RENDER.html">
+        <li class="chapter " data-level="1.3.1" data-path="../api/RENDER.html">
             
-                <a href="RENDER.html">
+                <a href="../api/RENDER.html">
             
                     
                     render
@@ -172,9 +172,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="RELATE.html">
+        <li class="chapter " data-level="1.3.2" data-path="../api/RELATE.html">
             
-                <a href="RELATE.html">
+                <a href="../api/RELATE.html">
             
                     
                     relate
@@ -185,9 +185,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="REGISTER.html">
+        <li class="chapter " data-level="1.3.3" data-path="../api/REGISTER.html">
             
-                <a href="REGISTER.html">
+                <a href="../api/REGISTER.html">
             
                     
                     register
@@ -198,9 +198,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="START_MODEL.html">
+        <li class="chapter " data-level="1.3.4" data-path="../api/START_MODEL.html">
             
-                <a href="START_MODEL.html">
+                <a href="../api/START_MODEL.html">
             
                     
                     startModel
@@ -211,9 +211,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="MODEL.html">
+        <li class="chapter " data-level="1.3.5" data-path="../api/MODEL.html">
             
-                <a href="MODEL.html">
+                <a href="../api/MODEL.html">
             
                     
                     model
@@ -229,9 +229,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" data-path="../exam/EXAM.html">
+        <li class="chapter active" data-level="1.4" data-path="EXAM.html">
             
-                <a href="../exam/EXAM.html">
+                <a href="EXAM.html">
             
                     
                     示例
@@ -272,7 +272,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >render</a>
+        <a href="../.." >示例</a>
     </h1>
 </div>
 
@@ -287,59 +287,10 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="renderconfigfunction">render(Config)(Function)</h3>
-<blockquote>
-<p>&#x8BF4;&#x660E;: render&#x65B9;&#x6CD5;&#x7684;&#x529F;&#x80FD;&#x662F;&#x5C06;action&#x7C7B;&#x548C;&#x7EC4;&#x4EF6;&#x7ED1;&#x5B9A;&#x5230;&#x4E00;&#x8D77;&#xFF0C;&#x7136;&#x540E;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x5305;&#x88C5;&#x597D;&#x7684;&#x7EC4;&#x4EF6;&#x3002;&#x540C;&#x65F6;&#x53EF;&#x4EE5;&#x8BBE;&#x5B9A;&#x7EC4;&#x4EF6;&#x81EA;&#x5DF1;&#x7684;&#x72B6;&#x6001;&#x3002;</p>
-</blockquote>
-<h4 id="&#x53C2;&#x6570;">&#x53C2;&#x6570;</h4>
-<p>1&#x3001;Config: Object</p>
-<ul>
-<li><p>actions: &#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#xFF0C; &#x8BBE;&#x5B9A;&#x8981;&#x7ED1;&#x5B9A;&#x5230;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;action&#xFF0C;&#x5176;&#x4E2D;&#xFF0C;&#x5BF9;&#x8C61;&#x7684;key&#x503C;&#x662F;&#x4F60;&#x5C06;&#x5728;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x91CC;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;action&#x7684;&#x53E5;&#x67C4;&#xFF0C;value&#x503C;&#x662F;action&#x7C7B;&#x3002;</p>
-</li>
-<li><p>state: &#x8BBE;&#x5B9A;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;state</p>
-</li>
-<li><p>...others: &#x5176;&#x4ED6;&#x53C2;&#x6570;&#x4F1A;&#x7EC4;&#x6210;&#x6570;&#x7EC4;&#x6210;&#x4E3A;Function&#x51FD;&#x6570;&#x4ECE;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x3002;</p>
-</li>
-</ul>
-<p>2&#x3001;Function(config, others)</p>
-<p>&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x53C2;&#x6570;:</p>
-<ul>
-<li>config: &#x6709;&#x4E09;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;state&#xFF0C;props&#xFF0C;action<ul>
-<li>state&#x662F;&#x4E86;&#x672C;&#x7EC4;&#x4EF6;&#x81EA;&#x5DF1;&#x8BBE;&#x5B9A;&#x7684;&#x72B6;&#x6001;</li>
-<li>props&#x662F;&#x4F20;&#x5165;&#x672C;&#x7EC4;&#x4EF6;&#x7684;&#x72B6;&#x6001;</li>
-<li>action&#x662F;&#x7ED1;&#x5B9A;&#x5230;&#x8FD9;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;action&#x7C7B;&#x7684;&#x793A;&#x4F8B;&#x3002;</li>
-</ul>
-</li>
-<li>other: &#x81EA;&#x5B9A;&#x4E49;&#x8BBE;&#x5B9A;&#x7684;&#x5176;&#x4ED6;&#x53C2;&#x6570;&#x6570;&#x7EC4;</li>
-</ul>
-<p>&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x503C;: </p>
-<p>&#x8FD4;&#x56DE;react&#x7EC4;&#x4EF6;</p>
-<h4 id="render&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x503C;">render&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x503C;</h4>
-<p>&#x8C03;&#x7528;render&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x7ED1;&#x5B9A;&#x4E86;action&#x7684;&#x7EC4;&#x4EF6;&#x3002;</p>
-<h4 id="render&#x4F7F;&#x7528;&#x793A;&#x4F8B;">render&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h4>
-<pre><code class="lang-js"><span class="hljs-keyword">const</span> HomePage = render({
-    actions: {
-        ma: MainAction
-    },
-    state: {
-        name: <span class="hljs-string">&apos;ader-example&apos;</span>
-    }
-})(({props, state, action}) =&gt; {
-    <span class="hljs-keyword">let</span> description = props.store.getData(<span class="hljs-string">&apos;main.description&apos;</span>).value;
-
-    <span class="hljs-keyword">return</span> (
-        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">label</span>&gt;</span>&#x59D3;&#x540D;: <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span>{state.name}<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
-                {description}
-            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
-    );
-
-});
-</code></pre>
-
+                                <h2 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h2>
+<div style="width: 100%; height: 500px; border: 1px solid #ccc">
+<iframe src="./example/index.html" width="100%" height="100%" frameborder="none"></iframe>
+</div>
                                 
                                 </section>
                             
@@ -366,10 +317,10 @@
 
             
                 
-                
-                <a href="RELATE.html" class="navigation navigation-next navigation-unique" aria-label="Next page: relate">
-                    <i class="fa fa-angle-right"></i>
+                <a href="../api/MODEL.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: model">
+                    <i class="fa fa-angle-left"></i>
                 </a>
+                
                 
             
         
@@ -378,7 +329,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"render","level":"1.3.1","depth":2,"next":{"title":"relate","level":"1.3.2","depth":2,"path":"document/api/RELATE.md","ref":"./document/api/RELATE.md","articles":[]},"previous":{"title":"API文档","level":"1.3","depth":1,"ref":"","articles":[{"title":"render","level":"1.3.1","depth":2,"path":"document/api/RENDER.md","ref":"./document/api/RENDER.md","articles":[]},{"title":"relate","level":"1.3.2","depth":2,"path":"document/api/RELATE.md","ref":"./document/api/RELATE.md","articles":[]},{"title":"register","level":"1.3.3","depth":2,"path":"document/api/REGISTER.md","ref":"./document/api/REGISTER.md","articles":[]},{"title":"startModel","level":"1.3.4","depth":2,"path":"document/api/START_MODEL.md","ref":"./document/api/START_MODEL.md","articles":[]},{"title":"model","level":"1.3.5","depth":2,"path":"document/api/MODEL.md","ref":"./document/api/MODEL.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"document/api/RENDER.md","mtime":"2019-07-17T05:03:22.116Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-17T07:32:51.070Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"示例","level":"1.4","depth":1,"previous":{"title":"model","level":"1.3.5","depth":2,"path":"document/api/MODEL.md","ref":"./document/api/MODEL.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"document/exam/EXAM.md","mtime":"2019-07-17T07:24:51.749Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-17T07:32:51.070Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

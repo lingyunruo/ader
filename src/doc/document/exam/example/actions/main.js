@@ -15,7 +15,17 @@ export default class MainAction {
                 name: 'ader-example-is-running'
             });
             this.c.props.store.setData('main.description', '一个整合react的框架');
-        }, 3000);
+        }, 5000);
+        let timer = setInterval(() => {
+            let timeCount = this.c.props.store.getData('main.timeCount').value;
+            if(timeCount <= 0) {
+                clearInterval(timer);
+                return;
+            }
+
+            this.c.props.store.setData('main.timeCount', timeCount - 1);
+            
+        }, 1000);
     }
 
     didUpdate = () => {

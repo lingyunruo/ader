@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.less';
 
-import {render} from '../../index';
+import {render} from '../../../../../index';
 import MainAction from '../actions/main';
 
 
@@ -21,6 +21,9 @@ const HomePage = render({
             <span>{state.name}</span>
             <div>
                 {description}
+            </div>
+            <div>
+                <label>倒计时：{props.store.getData('main.timeCount').value}秒后会发生什么</label>
             </div>
         </div>
     );

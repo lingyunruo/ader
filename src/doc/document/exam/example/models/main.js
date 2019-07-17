@@ -4,7 +4,8 @@ export default class MainModel {
     name = 'main'
 
     data = {
-        description: '这是什么'
+        description: '这是什么',
+        timeCount: 5
     }
 
     methods = {}

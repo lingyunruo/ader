@@ -3,7 +3,7 @@ import store from './store';
 import {deepCopy, getType} from './h';
 
 import insetRegular from './inset-regular';
-import pubSub from './pubSub';
+import pubSub from '../utils/pubSub';
 import {subscribeName} from './constant';
 
 // 按照 option给的顺序读取值

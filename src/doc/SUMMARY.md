@@ -10,3 +10,4 @@
     * [register](./document/api/REGISTER.md)
     * [startModel](./document/api/START_MODEL.md)
     * [model](./document/api/MODEL.md)
+* [示例](./document/exam/EXAM.md)
