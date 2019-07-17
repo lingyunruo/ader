@@ -1,7 +1,7 @@
 import BaseMethods from './base-methods';
 
 import store from './store';
-import pubSub from './pubSub';
+import pubSub from '../utils/pubSub';
 
 import {getType} from './h';
 import insetRegular from './inset-regular';

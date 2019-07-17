@@ -1,5 +1,0 @@
-## action概念介绍
-
-action的形态是由ES6的class定义的一个类。ader通过render方法，将组件和action类相关联。于是action内，就可以调用通过各种方式传递给组件的方法或者属性。
-
-action的作用就是组织逻辑，并且在每一个action上会挂载一些有用的方法。

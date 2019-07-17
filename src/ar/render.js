@@ -1,6 +1,5 @@
 
 import React, {Component} from 'react';
-import PropTypes from 'prop-types'
 import BaseComponent from './BaseComponent';
 
 export default (config = {}) => {
@@ -10,14 +9,10 @@ export default (config = {}) => {
         let {
             actions = {}, 
             state = {}, 
-            init = () => {},
             ...others
         } = config;
 
         class CustomComponentWithAction extends BaseComponent {
-            static contextTypes = {
-                scope: PropTypes.object
-            }
             constructor(props) {
                 super(props);
                 
@@ -32,8 +27,7 @@ export default (config = {}) => {
                 const Wrapper = renderFn({
                     props: this.props, 
                     action: this.action, 
-                    state: this.state,
-                    scope: this.context.scope
+                    state: this.state
                 }, others);
                 return Wrapper;
             }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import pubSub from './pubSub';
+import pubSub from '../utils/pubSub';
 import extend from './extends';
 
 // 内建方法列表
