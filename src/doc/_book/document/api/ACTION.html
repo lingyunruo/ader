@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>model · GitBook</title>
+        <title>action · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="../exam/EXAM.html" />
     
-    <link rel="prev" href="ACTION_INTRODUCE.html" />
+    
+    <link rel="prev" href="MODEL.html" />
     
 
     </head>
@@ -100,9 +102,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="../concept/">
             
-                <a href="./">
+                <a href="../concept/">
             
                     
                     概念介绍
@@ -114,9 +116,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="ACTION_INTRODUCE.html">
+        <li class="chapter " data-level="1.2.1" data-path="../concept/ACTION_INTRODUCE.html">
             
-                <a href="ACTION_INTRODUCE.html">
+                <a href="../concept/ACTION_INTRODUCE.html">
             
                     
                     action
@@ -127,9 +129,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.2" data-path="MODEL_INTRODUCE.html">
+        <li class="chapter " data-level="1.2.2" data-path="../concept/MODEL_INTRODUCE.html">
             
-                <a href="MODEL_INTRODUCE.html">
+                <a href="../concept/MODEL_INTRODUCE.html">
             
                     
                     model
@@ -159,9 +161,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="../api/RENDER.html">
+        <li class="chapter " data-level="1.3.1" data-path="RENDER.html">
             
-                <a href="../api/RENDER.html">
+                <a href="RENDER.html">
             
                     
                     render
@@ -172,9 +174,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="../api/RELATE.html">
+        <li class="chapter " data-level="1.3.2" data-path="RELATE.html">
             
-                <a href="../api/RELATE.html">
+                <a href="RELATE.html">
             
                     
                     relate
@@ -185,9 +187,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="../api/REGISTER.html">
+        <li class="chapter " data-level="1.3.3" data-path="REGISTER.html">
             
-                <a href="../api/REGISTER.html">
+                <a href="REGISTER.html">
             
                     
                     register
@@ -198,9 +200,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="../api/START_MODEL.html">
+        <li class="chapter " data-level="1.3.4" data-path="START_MODEL.html">
             
-                <a href="../api/START_MODEL.html">
+                <a href="START_MODEL.html">
             
                     
                     startModel
@@ -211,9 +213,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="../api/MODEL.html">
+        <li class="chapter " data-level="1.3.5" data-path="MODEL.html">
             
-                <a href="../api/MODEL.html">
+                <a href="MODEL.html">
             
                     
                     model
@@ -224,9 +226,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.6" data-path="../api/ACTION.html">
+        <li class="chapter active" data-level="1.3.6" data-path="ACTION.html">
             
-                <a href="../api/ACTION.html">
+                <a href="ACTION.html">
             
                     
                     action
@@ -285,7 +287,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >model</a>
+        <a href="../.." >action</a>
     </h1>
 </div>
 
@@ -300,28 +302,66 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="model&#x6982;&#x5FF5;&#x4ECB;&#x7ECD;">model&#x6982;&#x5FF5;&#x4ECB;&#x7ECD;</h3>
-<p>model&#x7684;&#x5F62;&#x6001;&#x662F;&#x7531;ES6&#x7684;class&#x5B9A;&#x4E49;&#x7684;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5F62;&#x5F0F;&#x3002;ader&#x901A;&#x8FC7;register&#x65B9;&#x6CD5;&#x6CE8;&#x518C;model&#xFF0C;&#x901A;&#x8FC7;startModel&#x65B9;&#x6CD5;&#x542F;&#x52A8;model&#x3002;</p>
-<p>model&#x4E3B;&#x8981;&#x8D1F;&#x8D23;&#x6570;&#x636E;&#x7684;&#x7BA1;&#x7406;&#xFF0C;&#x53EA;&#x6709;&#x51E0;&#x4E2A;&#x7B80;&#x5355;&#x7684;API&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x6CE8;&#x518C;&#x591A;&#x4E2A;model&#x3002;&#x5BF9;&#x4E8E;&#x5F00;&#x53D1;&#x8005;&#x800C;&#x8A00;&#xFF0C;&#x6240;&#x6709;&#x7684;model&#x6570;&#x636E;&#x90FD;&#x662F;&#x53EF;&#x83B7;&#x53D6;&#x7684;&#x3002;</p>
-<h3 id="model&#x793A;&#x4F8B;">model&#x793A;&#x4F8B;</h3>
-<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MainModel</span> </span>{
-    name = <span class="hljs-string">&apos;main&apos;</span>
-
-    data = {
-        description: <span class="hljs-string">&apos;&#x8FD9;&#x662F;&#x4EC0;&#x4E48;&apos;</span>
-    }
-
-    methods = {}
-
-    didInstance = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">store</span>) </span>{
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x672C;model&#x7C7B;&#x5B9E;&#x4F8B;&#x5316;&#x5B8C;&#x6210;&apos;</span>)
-    }
-
-    didAllInstance = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">store</span>) </span>{
-        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x6240;&#x6709;model&#x7C7B;&#x5B9E;&#x4F8B;&#x5316;&#x5B8C;&#x6210;&apos;</span>);
-    }
-}
-</code></pre>
+                                <h3 id="action&#x7C7B;&#x5C5E;&#x6027;&#x53CA;&#x65B9;&#x6CD5;">action&#x7C7B;&#x5C5E;&#x6027;&#x53CA;&#x65B9;&#x6CD5;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x65B9;&#x6CD5;&#x540D;</th>
+<th>&#x53C2;&#x6570;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>publish</td>
+<td>type[, args...]</td>
+<td>&#x53D1;&#x5E03;&#x6D88;&#x606F;&#xFF0C;type&#x662F;&#x6D88;&#x606F;&#x7C7B;&#x578B;&#xFF0C;args&#x662F;&#x53C2;&#x6570;&#xFF0C;&#x9664;&#x4E86;type&#xFF0C;&#x5269;&#x4F59;&#x7684;&#x6240;&#x6709;&#x53C2;&#x6570;&#x90FD;&#x4F1A;&#x4F20;&#x5165;&#x8BA2;&#x9605;&#x65B9;&#x6CD5;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;</td>
+</tr>
+<tr>
+<td>subscribe</td>
+<td>type, callback</td>
+<td>&#x8BA2;&#x9605;&#x6D88;&#x606F;&#xFF0C;type&#x662F;&#x6D88;&#x606F;&#x7C7B;&#x578B;&#xFF0C;callback&#x662F;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;callback&#x53C2;&#x6570;&#x662F;publish&#x7684;&#x4F20;&#x5165;</td>
+</tr>
+<tr>
+<td>unSubscribe</td>
+<td>type[, fn]</td>
+<td>&#x53D6;&#x6D88;&#x8BA2;&#x9605;&#xFF0C;&#x5982;&#x679C;&#x4F20;&#x5165;fn&#xFF0C;&#x53D6;&#x6D88;&#x5BF9;&#x5E94;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x4F20;&#x5165;&#xFF0C;&#x5219;&#x53D6;&#x6D88;&#x8FD9;&#x4E2A;type&#x4E0B;&#x7684;&#x6240;&#x6709;&#x8BA2;&#x9605;&#x51FD;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>action&#x91CC;&#x6709;&#x51E0;&#x4E2A;&#x56FA;&#x5B9A;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5BF9;&#x5E94;&#x4E86;action&#x548C;&#x7EC4;&#x4EF6;&#x7684;&#x4E00;&#x4E9B;&#x751F;&#x547D;&#x5468;&#x671F;</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>&#x51FD;&#x6570;&#x540D;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>didMount</td>
+<td>&#x5BF9;&#x5E94;&#x7ED1;&#x5B9A;&#x7EC4;&#x4EF6;&#x7684;componentDidMount</td>
+</tr>
+<tr>
+<td>willUnMount</td>
+<td>&#x5BF9;&#x5E94;&#x7ED1;&#x5B9A;&#x7EC4;&#x4EF6;&#x7684;componentWillUnMount</td>
+</tr>
+<tr>
+<td>didUpdate</td>
+<td>&#x5BF9;&#x5E94;&#x7ED1;&#x5B9A;&#x7EC4;&#x4EF6;&#x7684;componentDidUpdate</td>
+</tr>
+<tr>
+<td>didAllInstance</td>
+<td>&#x5F53;&#x7EC4;&#x4EF6;&#x7ED1;&#x5B9A;&#x7684;&#x6240;&#x6709;action&#x90FD;&#x5B8C;&#x6210;&#x4E86;&#x5B9E;&#x4F8B;&#x5316;&#x4E4B;&#x540E;&#x6267;&#x884C;</td>
+</tr>
+<tr>
+<td>didInstance</td>
+<td>&#x5F53;&#x524D;&#x7684;action&#x5B8C;&#x6210;&#x5B9E;&#x4F8B;&#x5316;&#x4E4B;&#x540E;&#x6267;&#x884C;</td>
+</tr>
+</tbody>
+</table>
 
                                 
                                 </section>
@@ -349,10 +389,14 @@
 
             
                 
-                <a href="ACTION_INTRODUCE.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: action">
+                <a href="MODEL.html" class="navigation navigation-prev " aria-label="Previous page: model">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="../exam/EXAM.html" class="navigation navigation-next " aria-label="Next page: 示例">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -361,7 +405,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"model","level":"1.2.2","depth":2,"next":{"title":"API文档","level":"1.3","depth":1,"ref":"","articles":[{"title":"render","level":"1.3.1","depth":2,"path":"document/api/RENDER.md","ref":"./document/api/RENDER.md","articles":[]},{"title":"relate","level":"1.3.2","depth":2,"path":"document/api/RELATE.md","ref":"./document/api/RELATE.md","articles":[]},{"title":"register","level":"1.3.3","depth":2,"path":"document/api/REGISTER.md","ref":"./document/api/REGISTER.md","articles":[]},{"title":"startModel","level":"1.3.4","depth":2,"path":"document/api/START_MODEL.md","ref":"./document/api/START_MODEL.md","articles":[]},{"title":"model","level":"1.3.5","depth":2,"path":"document/api/MODEL.md","ref":"./document/api/MODEL.md","articles":[]},{"title":"action","level":"1.3.6","depth":2,"path":"document/api/ACTION.md","ref":"./document/api/ACTION.md","articles":[]}]},"previous":{"title":"action","level":"1.2.1","depth":2,"path":"document/concept/ACTION_INTRODUCE.md","ref":"./document/concept/ACTION_INTRODUCE.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"document/concept/MODEL_INTRODUCE.md","mtime":"2019-07-17T04:20:58.113Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-17T08:38:48.024Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"action","level":"1.3.6","depth":2,"next":{"title":"示例","level":"1.4","depth":1,"path":"document/exam/EXAM.md","ref":"./document/exam/EXAM.md","articles":[]},"previous":{"title":"model","level":"1.3.5","depth":2,"path":"document/api/MODEL.md","ref":"./document/api/MODEL.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"document/api/ACTION.md","mtime":"2019-07-17T05:49:15.491Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-17T08:38:48.024Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
