@@ -5,7 +5,8 @@
   "main": "./ader/index.js",
   "scripts": {
     "gitbook": "gitbook",
-    "b": "webpack --config ./src/doc/document/exam/example/webpack.config.js"
+    "b": "webpack --config ./src/doc/document/exam/example/webpack.config.js",
+    "w": "webpack --watch --config ./src/doc/document/exam/example/webpack.config.js"
   },
   "repository": {
     "type": "git",

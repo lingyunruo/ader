@@ -6,6 +6,7 @@
  * 注意超类内的方法的实现，如果使用箭头函数，则方法内的this指向会固定到超类实例
  *  */
 
+ import commonMethods from './commonMethods';
 
 export default function frameExtend(childAction, context) {
 
@@ -18,12 +19,13 @@ export default function frameExtend(childAction, context) {
         extend.map((Action) => {
             extendObject(childAction, Action);
         });
-    }
+    } 
     else if(typeof extend === 'function') {
         extendObject(childAction, extend);
     }
-    else if({}.toString.call(extend) === '[object Object]') {
+    else if(Object.prototype.toString.call(extend) === '[object Object]') {
         mergeProperty(childAction, extend);
+        commonMethods(extend);
     }
     else {
         return;
@@ -33,6 +35,8 @@ export default function frameExtend(childAction, context) {
         let parentAction = new ParentAction(child, context);
         
         mergeProperty(child, parentAction);
+        commonMethods(parentAction);
+        console.log(parentAction);
     }
 
     function mergeProperty(child, parent) {

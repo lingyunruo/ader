@@ -1,6 +1,13 @@
 ### action类属性及方法
 
 
+#### action类内部的方法
+| 方法名 | 参数 | 说明 |
+|-------|-----|------|
+| isType | value, type | 判断value是否是type类型 |
+| removeItem | list, item, newItem(可选) | 删除list数组里的某一项，如果有newItem，则替换成newItem |
+
+#### action类内部的pubSub对象的方法
 | 方法名 | 参数 | 说明 |
 |-------|-----|------|
 | publish | type[, args...] | 发布消息，type是消息类型，args是参数，除了type，剩余的所有参数都会传入订阅方法回调函数的参数 |

@@ -3,6 +3,8 @@ import React, {Component} from 'react';
 import pubSub from '../utils/pubSub';
 import extend from './extends';
 
+import commonMethods from './commonMethods';
+
 // 内建方法列表
 const builtInMethods = ['didMount', 'didUpdate', 'willUnMount', 'didAllInstance', 'didInstance'];
 
@@ -31,8 +33,11 @@ class BaseComponent extends Component {
             let action = new this.actions[key](this);
             // 给每个action添加订阅发布
             action.pubSub = pubSub;
-            // 将mixin合并到action里
+            // 将extend合并到action里
             extend(action, this);
+
+            // 给每个action添加能力
+            commonMethods(action);
 
             this.action[key] = action;
 

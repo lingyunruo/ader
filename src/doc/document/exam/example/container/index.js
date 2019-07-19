@@ -25,6 +25,11 @@ const HomePage = render({
             <div>
                 <label>倒计时：{props.store.getData('main.timeCount').value}秒后会发生什么</label>
             </div>
+            <button
+                onClick={action.ma.emitAction}
+            >
+                点击触发action
+            </button>
         </div>
     );
 

@@ -113,6 +113,13 @@ let WrapperComponent = fn(({props, state, action}, {customData}) => {
 
 ### action
 
+> action内部自带了一些方法
+
+| 方法名 | 参数 | 说明 |
+|-------|-----|------|
+| isType | value, type | 判断value是否是type类型 |
+| removeItem | list, item, newItem(可选) | 删除list数组里的某一项，如果有newItem，则替换成newItem |
+
 > 每一个action都默认添加了一个pubSub对象，该对象有三个方法，一个项目里所使用的发布订阅是同一个对象，所以用这个方式，可以进行跨越层级的事件通讯，方法如下
 
 | 方法名 | 参数 | 说明 |

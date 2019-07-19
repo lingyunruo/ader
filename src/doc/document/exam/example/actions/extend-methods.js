@@ -10,4 +10,10 @@ export default class ExtendsMethods {
         console.log(`名字是${this.c.state.name}`);
         console.log(this.c.props.store.getData('main.description'));
     }
+
+    emitAction = () => {
+        let list = this.removeItem([1,2,3], 2, 909);
+
+        console.log(list)
+    }
 }
