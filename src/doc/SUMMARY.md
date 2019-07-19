@@ -1,7 +1,7 @@
 # Summary
 
-* [自述](README.md)
-* [概念介绍](./document/concept/README.md)
+* [自述](./README.md)
+* [概念介绍](./document/concept/CONCEPT.md)
     * [action](./document/concept/ACTION_INTRODUCE.md)
     * [model](./document/concept/MODEL_INTRODUCE.md)
 * API文档
