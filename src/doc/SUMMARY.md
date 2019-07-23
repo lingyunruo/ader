@@ -8,6 +8,7 @@
     * [render](./document/api/RENDER.md)
     * [relate](./document/api/RELATE.md)
     * [register](./document/api/REGISTER.md)
+    * [addModel](./document/api/ADD_MODEL.md)
     * [startModel](./document/api/START_MODEL.md)
     * [model](./document/api/MODEL.md)
     * [action](./document/api/ACTION.md)
