@@ -1,5 +1,5 @@
 import {render, relate} from './ar';
-import {register, extendRegular, startModel} from './dc';
+import {register, extendRegular, startModel, addModel} from './dc';
 
 
 export {
@@ -7,5 +7,6 @@ export {
     register,
     extendRegular,
     startModel,
-    relate
+    relate,
+    addModel
 }

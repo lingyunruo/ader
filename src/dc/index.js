@@ -5,10 +5,18 @@ import pubSub from '../utils/pubSub';
 
 import {getType} from './h';
 import insetRegular from './inset-regular';
+import {INSET_WORD} from './constant';
+
+import instanceModel from './instanceModel';
 
 let insetMethods = BaseMethods();
 
-let methodsMap = [];
+// 全store实例
+let storeObj = {
+    ...insetMethods,
+    pubSub: pubSub,
+    models: {}
+};
 
 // 扩展内置验证数据方法
 export const extendRegular = insetRegular.extendRegular;
@@ -16,7 +24,7 @@ export const extendRegular = insetRegular.extendRegular;
 // 注册model，在注册的时候给model的prototype属性添加各种model内可用的方法
 // 参数支持一个model也支持model数组
 // 返回值是一个model的索引数组
-export const register = (Model, opt) => {
+export const register = (Model) => {
     let indexList = [];
     let ModelList = [];
  
@@ -31,49 +39,39 @@ export const register = (Model, opt) => {
         // 通过store提供的方法，存储下Model本身，留下影子应对后来的类型判断
         let modelIndex = store.setModelClass(ModelItem)
         indexList.push(modelIndex);
-        methodsMap[modelIndex] = opt;
     });
     return indexList;
-} 
+}
+
+export const addModel = (Model) => {
+    let modelIndexList = register(Model);
+
+    let modelsClass = [];
+
+    modelIndexList.forEach((key) => {
+        modelsClass.push(store.getModelClass(key));
+    });
+
+    let insResult = instanceModel(modelsClass, storeObj);
+
+    insResult.modelAllInstanceCallback.forEach((fn) => {
+        fn(storeObj);
+    });
+
+    Object.assign(storeObj.models, insResult.models);
+}
 
 export const startModel = (callbackFun) => {
 
     // 拿到注册的class
     const ModelClassList = store.getModelClass();
-    let models = {};
-    let storeObj = {
-        ...insetMethods,
-        pubSub: pubSub
-    };
 
+    let insResult = instanceModel(ModelClassList, storeObj);
+    let models = insResult.models;
     // 所有已注册model实例化完成钩子，对应model里的didAllInstance
-    let modelAllInstanceCallback = [];
+    let modelAllInstanceCallback = insResult.modelAllInstanceCallback;
 
-    ModelClassList.forEach((ModelClass, index) => {
-        // 实例化model
-        let model = new ModelClass();
-        
-        models[model.name] = model;
-
-        if(model.methods) {
-            Object.keys(model.methods).forEach((fnName) => {
-                model[fnName] = (...args) => {
-                    return model.methods[fnName].apply(model, [...args, storeObj]);
-                }
-            });
-        }
-
-        if(typeof model.didInstance === 'function') {
-            model.didInstance(storeObj);
-        }
-        if(typeof model.didAllInstance === 'function') {
-            modelAllInstanceCallback.push(model.didAllInstance);
-        }
-        // 存储下model实例
-        store.setModel(model);
-    });
-
-    Object.assign(storeObj, {models: models});
+    Object.assign(storeObj.models, models);
 
     modelAllInstanceCallback.forEach((fn) => {
         fn(storeObj);
