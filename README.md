@@ -9,3 +9,5 @@ ader不是一个完整的框架，而更倾向于一种设计规范或者设计�
 ader适用于状态多，重逻辑的应用。
 
 详细文档见：http://www.amiling.com:8080
+
+示例见：src/doc/document/exam/example
