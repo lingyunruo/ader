@@ -2,7 +2,7 @@
   "name": "ader",
   "version": "0.0.1",
   "description": "",
-  "main": "./ader/index.js",
+  "main": "./src/index.js",
   "scripts": {
     "gitbook": "gitbook",
     "b": "webpack --config ./src/doc/document/exam/example/webpack.config.js",
