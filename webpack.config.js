@@ -2,8 +2,9 @@
 const path = require('path');
 
 module.exports = {
+    mode: 'development',
     entry: {
-        'index': path.join(__dirname, './src/index.js')
+        'index': path.join(__dirname, './src/frame/index.js')
     },
     output: {
         path: path.join(__dirname, './lib'),
@@ -11,6 +12,11 @@ module.exports = {
         library: '[name]',
         libraryTarget: 'umd',
         chunkFilename: '[name].js'
+    },
+    devtool: 'cheap-module-source-map',
+    externals: {
+        'react': 'React',
+        'react-dom': 'ReactDOM'
     },
     module: {
         rules: [{
