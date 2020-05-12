@@ -2,8 +2,8 @@
   "name": "ader",
   "version": "1.0.0",
   "description": "",
-  "main": "./lib/index.js",
-  "source": "./src/frame/index.js",
+  "main": "./src/frame/index.js",
+  "compiled": "./lib/index.js",
   "scripts": {
     "gitbook": "gitbook",
     "b": "webpack",
