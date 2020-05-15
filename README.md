@@ -1,6 +1,6 @@
 ## 简介
 
-> 这是一个组织基于react开发的代码的框架。框架将组件，逻辑，数据模型的代码分开管理。适用于重逻辑和重数据模型的场景。整个框架只暴露了Model基础类，render方法，createStore方法，connect方法，简单易懂。本框架 用到了es6的class静态属性语法，需要安装babel-plugin-transform-class-properties插件
+> 这是一个组织基于react代码的框架。框架将组件，逻辑，数据模型的代码分开管理。适用于重逻辑和重数据模型的场景。整个框架只暴露了Model基础类，render方法，createStore方法，connect方法，简单易懂。本框架 用到了es6的class静态属性语法，需要安装babel-plugin-transform-class-properties插件
 
 ## 概念
 
