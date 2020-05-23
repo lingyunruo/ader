@@ -6,8 +6,7 @@ import getProtoList from '../utils/getProtoList';
 export default ({setData, getData}) => (modelList = [], options) => {
 
     let originModelInstance = getData('modelInstanceList') || {};
-    let originModelClassList = getData('ModelClassList') || [];
-    modelList = modelList.concat(originModelClassList);
+
     // 存储model类的列表
     setData('ModelClassList', modelList);
 
