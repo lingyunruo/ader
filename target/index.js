@@ -396,6 +396,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var store = Object(_src_frame__WEBPACK_IMPORTED_MODULE_2__["createStore"])([_model__WEBPACK_IMPORTED_MODULE_4__["default"], _model2__WEBPACK_IMPORTED_MODULE_5__["default"]]);
+var store2 = Object(_src_frame__WEBPACK_IMPORTED_MODULE_2__["createStore"])([_model2__WEBPACK_IMPORTED_MODULE_5__["default"]]);
 var HomePage = Object(_src_frame__WEBPACK_IMPORTED_MODULE_2__["connect"])(_home__WEBPACK_IMPORTED_MODULE_3__["default"]);
 Object(react_dom__WEBPACK_IMPORTED_MODULE_1__["render"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HomePage, {
   store: store
@@ -7931,8 +7932,8 @@ function (_EventClass) {
 
     _classCallCheck(this, BaseModel);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(BaseModel).call(this));
-    _this.model = model; // 存储上一次已改变的值
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(BaseModel).call(this)); // this.model = model;
+    // 存储上一次已改变的值
 
     _this.changed = {};
     return _this;
@@ -7946,8 +7947,8 @@ function (_EventClass) {
       if (args2 === undefined) {
         if (Object.prototype.toString.call(args1) === '[object Object]') {
           Object.keys(args1).forEach(function (key) {
-            _this2.changed[key] = _this2.model.data[key];
-            _this2.model.data[key] = args1[key];
+            _this2.changed[key] = _this2.data[key];
+            _this2.data[key] = args1[key];
 
             _this2.trigger("change:".concat(key), args1[key]);
           });
@@ -7956,8 +7957,8 @@ function (_EventClass) {
           throw new Error('如果只穿一个参数，必须传入一个对象');
         }
       } else {
-        this.changed[args1] = this.model.data[args1];
-        this.model.data[args1] = args2;
+        this.changed[args1] = this.data[args1];
+        this.data[args1] = args2;
         this.trigger("change:".concat(args1), _defineProperty({}, args1, args2));
         this.trigger('change', _defineProperty({}, args1, args2));
       }
@@ -7966,15 +7967,15 @@ function (_EventClass) {
     key: "get",
     value: function get(key) {
       if (key) {
-        return this.model.data[key];
+        return this.data[key];
       } else {
-        return this.model.data;
+        return this.data;
       }
     }
   }, {
     key: "has",
     value: function has(attribute) {
-      var data = this.model.data;
+      var data = this.data;
 
       if (data[attribute] === undefined || data[attribute] === null) {
         return false;
@@ -7991,7 +7992,7 @@ function (_EventClass) {
       var copyData = {};
 
       if (data === undefined) {
-        data = this.model.data;
+        data = this.data;
       }
 
       Object.keys(data).forEach(function (key) {
@@ -8007,7 +8008,7 @@ function (_EventClass) {
   }, {
     key: "previous",
     value: function previous(attribute) {
-      var data = Object.assign({}, this.model.data, this.changed);
+      var data = Object.assign({}, this.data, this.changed);
 
       if (attribute) {
         return data[attribute];
@@ -8172,16 +8173,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = (function (_ref) {
   var setData = _ref.setData,
       getData = _ref.getData;
-  return function (modelList, options) {
-    // 存储model类的列表
-    setData('ModelClassList', modelList);
-    var modelInstance = {}; // 实例化所有model类
+  return function () {
+    var modelList = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var options = arguments.length > 1 ? arguments[1] : undefined;
+    var originModelInstance = getData('modelInstanceList') || {}; // 存储model类的列表
 
-    Array.isArray(modelList) && modelList.forEach(function (Model, index) {
+    setData('ModelClassList', modelList);
+    var modelInstance = originModelInstance; // 实例化所有model类
+
+    modelList.forEach(function (Model, index) {
       var proto = Object(_utils_getProtoList__WEBPACK_IMPORTED_MODULE_1__["default"])(Model).prototypes;
       var model = new Model();
 
-      if (proto.constructor.name !== 'BaseModel') {
+      if (!(model instanceof _BaseModel__WEBPACK_IMPORTED_MODULE_0__["default"])) {
         var base = new _BaseModel__WEBPACK_IMPORTED_MODULE_0__["default"](model);
         Object.setPrototypeOf(proto, base); // proto.__proto__ = base
       }
