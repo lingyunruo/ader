@@ -23,7 +23,7 @@ export default ({getData, setData}) => (options = {}) => {
 
                 // model实例
                 let modelInstance = getData('modelInstanceList');
-                setData('modelInstanceList', {});
+                // setData('modelInstanceList', {});
 
                 // 如果配置了actions
                 if(options.actions) {
