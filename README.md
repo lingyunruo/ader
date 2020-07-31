@@ -95,13 +95,13 @@ let store = createStore([MainModel, MainModel2]);
 ```js
 
 import {render} from 'react-dom';
-let WrapperComponent = connect(HomePageComponent);
+let WrapperComponent = connect(['main'])(HomePageComponent);
 
 render(<WrapperComponent store={store}/>, document,getElementById('app'))
 
 ```
 
-> 连接store和组件的方法，最终store会挂在组件的props属性上
+> 连接store和组件的方法，第一个括号内的参数是个数组，选择需要跟组件有关联的model名字放到数组里，最终store会挂在组件的props属性上
 
 
 
