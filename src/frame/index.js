@@ -14,10 +14,11 @@ let getData = (key) => {
 
 let finalStart = createStore({setData, getData});
 let finalRender = render({setData, getData});
+let finalConnect = connect({setData, getData})
 
 export {
     finalRender as render,
     Model,
     finalStart as createStore,
-    connect
+    finalConnect as connect
 }
